@@ -1,3 +1,5 @@
+import { formatDate, formatDateTime } from '../utils/format.js'
+
 function LopTable({ entries }) {
   return (
     <table className="lop-table">
@@ -20,12 +22,12 @@ function LopTable({ entries }) {
               <div>{entry.employee.fullName}</div>
               <div>#{entry.employee.employeeNumber}</div>
             </td>
-            <td>{entry.employee.joinDate}</td>
+            <td>{formatDate(entry.employee.joinDate)}</td>
             <td>{entry.totalWorkdays}</td>
             <td>{entry.lopDays}</td>
             <td>{entry.paymentDays}</td>
             <td>{entry.remarks ?? '--'}</td>
-            <td>{entry.updatedAt}</td>
+            <td>{formatDateTime(entry.updatedAt)}</td>
             <td>
               <button>Edit</button>
               <button>Delete</button>
