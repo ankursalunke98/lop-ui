@@ -10,7 +10,7 @@ function LopPage() {
             </div>
 
             <div className="info-banner">
-                <p>Loss of pay (LOP) is when salary is reduced of unpaid days.</p>
+                <p>Loss of pay (LOP) is when salary is reduced for unpaid days.</p>
                 <button className="primary-button">Add LOP Days</button>
             </div>
         </div>
