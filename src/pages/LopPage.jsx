@@ -1,3 +1,6 @@
+import LopTable from '../components/LopTable.jsx'
+import mockLopPage from '../data/mockLopEntries.js'
+
 function LopPage() {
     return (
         <div className="lop-page">
@@ -13,6 +16,8 @@ function LopPage() {
                 <p>Loss of pay (LOP) is when salary is reduced for unpaid days.</p>
                 <button className="primary-button">Add LOP Days</button>
             </div>
+            <LopTable entries={mockLopPage.content} />
+            <p className="table-footer">Total Items: {mockLopPage.totalElements}</p>
         </div>
     )
 }
