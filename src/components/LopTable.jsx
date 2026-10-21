@@ -1,4 +1,4 @@
-import { formatDate, formatDateTime } from '../utils/format.js'
+import LopRow from './LopRow.jsx'
 
 function LopTable({ entries }) {
   return (
@@ -17,22 +17,7 @@ function LopTable({ entries }) {
       </thead>
       <tbody>
         {entries.map((entry) => (
-          <tr key={entry.id}>
-            <td>
-              <div>{entry.employee.fullName}</div>
-              <div>#{entry.employee.employeeNumber}</div>
-            </td>
-            <td>{formatDate(entry.employee.joinDate)}</td>
-            <td>{entry.totalWorkdays}</td>
-            <td>{entry.lopDays}</td>
-            <td>{entry.paymentDays}</td>
-            <td>{entry.remarks ?? '--'}</td>
-            <td>{formatDateTime(entry.updatedAt)}</td>
-            <td>
-              <button>Edit</button>
-              <button>Delete</button>
-            </td>
-          </tr>
+          <LopRow key={entry.id} entry={entry} />
         ))}
       </tbody>
     </table>
